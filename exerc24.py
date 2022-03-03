@@ -12,16 +12,18 @@ op = input("Informe a operação a ser realizada [+,-,*,/]: ")
 def verificar():
     if resultado // 1 == resultado:
         print("Inteiro!")
-        if resultado % 2 == 0:
-            print("Par!")
-            if resultado > 0:
-                print("Positivo!")
-            else:
-                print("Negativo!")
-        else:
-            print("Impar!")
     else:
         print("Decimal!")
+    if resultado % 2 == 0:
+       print("Par!")
+    else:
+       print("Impar!")
+    if resultado > 0:
+       print("Positivo!")
+    else:
+        print("Negativo!")
+
+
 
 if op == '+':
     resultado = n1+n2
