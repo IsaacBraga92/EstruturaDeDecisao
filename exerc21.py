@@ -7,28 +7,23 @@
 # Exemplo 2: Para sacar a quantia de 399 reais, o programa fornece
 # três notas de 100, uma nota de 50, quatro notas de 10, uma nota de 5 e quatro notas de 1.
 
-valor = int(input("Informe o valor a ser sacado: "))
-
-if valor <10 or valor>600:
+saque = int(input("Informe o valor a ser sacado: "))
+notas_de_100 = notas_de_50 = notas_de_10 = notas_de_5 = notas_de_1 =0
+if saque <10 or saque>600:
     print("Valor a ser sacado indisponível!")
 else:
-    cem = valor //100
-    valor -= cem*100
-    cinquenta = valor // 50
-    valor -= cinquenta*50
-    dez = valor//10
-    valor -= dez*10
-    cinco = valor//5
-    valor -= cinco*5
-    um = valor
+    notas_de_100, saque = divmod(saque,100)
+    notas_de_50, saque = divmod(saque, 50)
+    notas_de_10, saque = divmod(saque, 10)
+    notas_de_5, notas_de_1 = divmod(saque, 5)
 
-    if cem > 0:
-        print(f"{cem} nota(s) de cem")
-    if cinquenta > 0:
-        print(f"{cinquenta} nota(s) de cinquenta")
-    if dez > 0:
-        print(f"{dez} nota(s) de dez")
-    if cinco > 0:
-        print(f"{cinco} nota(s) de cinco")
-    if um > 0:
-        print(f"{um} nota(s) de um")
+    if notas_de_100 >0:
+        print(f"{notas_de_100} nota(s) de 100")
+    if notas_de_50 >0:
+        print(f"{notas_de_50} nota(s) de 50")
+    if notas_de_100 >0:
+        print(f"{notas_de_10} nota(s) de 10")
+    if notas_de_100 >0:
+        print(f"{notas_de_5} nota(s) de 5")
+    if notas_de_1 > 0:
+            print(f"{notas_de_1} nota(s) de 1")
